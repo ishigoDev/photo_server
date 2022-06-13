@@ -20,12 +20,12 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.use('/',(req,res)=>{
-res.status(200).json({message:'Working Fine'})
-});
 app.use('/neutro',router);
 app.use('/neutro-admin',admin_router);
 app.use('/neutro-admin',admin_quote_router);
+app.use('/',(req,res)=>{
+res.status(200).json({message:'Working Fine'})
+});
 
 //api not found
 app.use((req,res)=>{
