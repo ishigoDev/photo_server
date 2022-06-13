@@ -22,6 +22,9 @@ app.use((req,res,next)=>{
 
     
 app.use('/neutro',router);
+app.use('/start',(req,res)=>{
+    res.status(200).json({message:'Working Fine'})
+});
 app.use('/neutro-admin',admin_router);
 app.use('/neutro-admin',admin_quote_router);
 
@@ -30,9 +33,6 @@ app.use((req,res)=>{
     res.status(404).json({message:'Route Not Found !'});
 });
 
-app.use('/',(req,res)=>{
-    res.status(200).json({message:'Working Fine'})
-    });
 
 // Handling Errors
 app.use((err, req, res, next) => { 
