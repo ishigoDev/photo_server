@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));  
 env.config();
 //cors error solution
-app.use(cors());
+app.use(cors({origin:'*'}));
 // app.use((req,res,next)=>{
 //     res.setHeader('Access-Control-Allow-Origin','https://neutrography.web.app/');
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
