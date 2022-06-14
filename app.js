@@ -8,19 +8,18 @@ import admin_quote_router from './controllers/adminQuotes.js';
 
 
 const app = express();
-app.use(cors({origin:'*'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));  
 env.config();
 //cors error solution
-// app.use((req,res,next)=>{
-//     res.setHeader('Access-Control-Allow-Origin','https://neutrography.web.app/');
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization");
-//     res.setHeader('Access-Control-Allow-Credentials', true);    
-//     next();
-// });
+app.use((req,res,next)=>{
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization");
+    res.setHeader('Access-Control-Allow-Credentials', true);    
+    next();
+});
 
     
 app.use('/neutro',router);
