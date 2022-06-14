@@ -29,6 +29,7 @@ const quotesFunction = (data,res) =>{
     });
     _message.save((error,message_dbresponse)=>{
         if(error) return res.status(400).json({message:error});
+        return res.status(200).json({status:1,message:'Data Saved !'});                    
         if(message_dbresponse){            
             const __dirname = path.resolve(path.dirname('')); 
             const filePath = path.join(__dirname,'/mailer/quote_submit.html');                
