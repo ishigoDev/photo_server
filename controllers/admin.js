@@ -108,7 +108,7 @@ router.post('/forgotpassword',forgetpasswordValidator,(req,res)=>{
         if(user){             
             user.generatePasswordReset();                    
             user.save((error,user_data)=>{
-                let link = "http://localhost:2000/resetpassword/" + user_data.resetPasswordToken;                
+                let link = "https://neutrography.herokuapp.com/resetpassword/" + user_data.resetPasswordToken;                
                 const __dirname = path.resolve(path.dirname('')); 
                 const filePath = path.join(__dirname,'/mailer/resetpassword.html');                
                 const source = fs.readFileSync(filePath, 'utf-8').toString();
