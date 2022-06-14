@@ -8,10 +8,6 @@ import admin_quote_router from './controllers/adminQuotes.js';
 
 
 const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(express.static('public'));  
-env.config();
 //cors error solution
 app.use((req,res,next)=>{
     res.setHeader('Access-Control-Allow-Origin','*');
@@ -20,6 +16,11 @@ app.use((req,res,next)=>{
     res.setHeader('Access-Control-Allow-Credentials', true);    
     next();
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static('public'));  
+env.config();
 
     
 app.use('/neutro',router);
