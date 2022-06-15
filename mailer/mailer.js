@@ -4,7 +4,7 @@ env.config();
 let transporter = nodemailer.createTransport({    
         service: 'gmail',
         auth: {        
-          user: "evincdevapi@gmail.com",
+          user: "evincedevapi@gmail.com",
           pass: "OldEvince12#",        
         }      
 });
