@@ -4,8 +4,8 @@ env.config();
 let transporter = nodemailer.createTransport({    
         service: 'gmail',
         auth: {        
-          user: process.env.MAIL_USERNAME,
-          pass: process.env.MAIL_PASSWORD,        
+          user: "evincdevapi@gmail.com",
+          pass: "OldEvince12#",        
         }      
 });
 
